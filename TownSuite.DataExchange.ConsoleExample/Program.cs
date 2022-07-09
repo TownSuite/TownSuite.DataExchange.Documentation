@@ -20,6 +20,7 @@ var httpClient = new HttpClient();
 httpClient.DefaultRequestHeaders.Add("User-Agent",
     "TSX-console-example/1.0 Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:102.0) Gecko/20100101 Firefox/102.0");
 
+
 // Decode token and view contents such as expires in
 var handler = new JwtSecurityTokenHandler();
 var jsonToken = handler.ReadToken(authSettings.AuthToken);
@@ -27,19 +28,25 @@ var tokenS = jsonToken as JwtSecurityToken;
 Console.WriteLine(jsonToken.ToString());
 
 
-using var request = new HttpRequestMessage()
+var client = new Client(httpClient);
+var result = await client.Get(
+    authSettings.BaseUrl,
+    authSettings.AuthToken,
+    $"/api/v1/Property/Assessment/{authSettings.ApiAccount}");
+if (result.statusCode != 200)
 {
-    Method = HttpMethod.Get,
-    RequestUri = new Uri(Utils.MakeSafeUrl(authSettings.BaseUrl, $"/api/v1/Property/Assessment/{authSettings.ApiAccount}"))
-};
-request.Headers.Add("Authorization", $"Bearer {authSettings.AuthToken}");
+    // assume auth token expired 
+    var refreshResult = await client.Get(
+        authSettings.BaseUrl,
+        authSettings.RefreshToken,
+        $"/api/v1/auth/refresh");
+    
+    Console.WriteLine(refreshResult.json);
+    Console.WriteLine("Use the new tokens");
+    return;
+}
 
-HttpResponseMessage response = await httpClient.SendAsync(request).ConfigureAwait(false);
+Console.WriteLine(result.json);
 
-var content = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
-Console.WriteLine(content);
-
-
-// TODO:  Show auth refresh
 
 
