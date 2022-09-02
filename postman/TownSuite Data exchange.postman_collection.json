@@ -1,0 +1,300 @@
+{
+	"info": {
+		"_postman_id": "ec72aa75-a2bb-4eaa-a355-f57953928e12",
+		"name": "Data exchange - Demo",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "4160162"
+	},
+	"item": [
+		{
+			"name": "auth - init",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"Username\": \"{{user3}}\",\n    \"Password\": \"{{password3}}\",\n    \"TwoFactorCode\": \"\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://tsx.yqx.auto.k8s.your-eservices.com/api/v1/auth",
+					"protocol": "https",
+					"host": [
+						"tsx",
+						"yqx",
+						"auto",
+						"k8s",
+						"your-eservices",
+						"com"
+					],
+					"path": [
+						"api",
+						"v1",
+						"auth"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "auth - twofactor",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"Username\": \"{{user3}}\",\n    \"Password\": \"{{password3}}\",\n    \"TwoFactorCode\": \"\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://tsx.yqx.auto.k8s.your-eservices.com/api/v1/auth/twofactor",
+					"protocol": "https",
+					"host": [
+						"tsx",
+						"yqx",
+						"auto",
+						"k8s",
+						"your-eservices",
+						"com"
+					],
+					"path": [
+						"api",
+						"v1",
+						"auth",
+						"twofactor"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "auth - refresh codes",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "Your Refresh Token Goes Here",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://tsx.yqx.auto.k8s.your-eservices.com/api/v1/auth/refresh",
+					"protocol": "https",
+					"host": [
+						"tsx",
+						"yqx",
+						"auto",
+						"k8s",
+						"your-eservices",
+						"com"
+					],
+					"path": [
+						"api",
+						"v1",
+						"auth",
+						"refresh"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "property - get assessment",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "Your Bearer Token Goes Here",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://tsx.yqx.auto.k8s.your-eservices.com/api/v1/property/assessment/The DataOwner key goes here",
+					"protocol": "https",
+					"host": [
+						"tsx",
+						"yqx",
+						"auto",
+						"k8s",
+						"your-eservices",
+						"com"
+					],
+					"path": [
+						"api",
+						"v1",
+						"property",
+						"assessment",
+						"The DataOwner key goes here"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "property - get annualbill",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "Your Bearer Token Goes Here",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://tsx.yqx.auto.k8s.your-eservices.com/api/v1/property/annualbill/The DataOwner key goes here",
+					"protocol": "https",
+					"host": [
+						"tsx",
+						"yqx",
+						"auto",
+						"k8s",
+						"your-eservices",
+						"com"
+					],
+					"path": [
+						"api",
+						"v1",
+						"property",
+						"annualbill",
+						"The DataOwner key goes here"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "property - get information",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "Your Bearer Token Goes Here",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://tsx.yqx.auto.k8s.your-eservices.com/api/v1/property/information/The DataOwner key goes here",
+					"protocol": "https",
+					"host": [
+						"tsx",
+						"yqx",
+						"auto",
+						"k8s",
+						"your-eservices",
+						"com"
+					],
+					"path": [
+						"api",
+						"v1",
+						"property",
+						"information",
+						"The DataOwner key goes here"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "property - get local improvement",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "Your Bearer Token Goes Here",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://tsx.yqx.auto.k8s.your-eservices.com/api/v1/property/localimprovement/The DataOwner key goes here",
+					"protocol": "https",
+					"host": [
+						"tsx",
+						"yqx",
+						"auto",
+						"k8s",
+						"your-eservices",
+						"com"
+					],
+					"path": [
+						"api",
+						"v1",
+						"property",
+						"localimprovement",
+						"The DataOwner key goes here"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "property - get other owner",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "Your Bearer Token Goes Here",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://tsx.yqx.auto.k8s.your-eservices.com/api/v1/property/otherowner/The DataOwner key goes here",
+					"protocol": "https",
+					"host": [
+						"tsx",
+						"yqx",
+						"auto",
+						"k8s",
+						"your-eservices",
+						"com"
+					],
+					"path": [
+						"api",
+						"v1",
+						"property",
+						"otherowner",
+						"The DataOwner key goes here"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
