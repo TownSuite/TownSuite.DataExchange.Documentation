@@ -1,12 +1,9 @@
-
-
-
 # Auth
 
 Initialize account
 
 ```bash
-curl --location --request POST 'https://tsx.yqx.auto.k8s.your-eservices.com/api/v1/auth' \
+curl --user-agent "ExampleApp/1.0" --location --request POST 'https://tsx.yqx.auto.k8s.your-eservices.com/api/v1/auth' \
 --header 'Content-Type: application/json' \
 --data-raw '{
     "Username": "{{email}}",
@@ -15,11 +12,10 @@ curl --location --request POST 'https://tsx.yqx.auto.k8s.your-eservices.com/api/
 }'
 ```
 
-
 Auth twofactor
 
 ```bash
-curl --location --request POST 'https://tsx.yqx.auto.k8s.your-eservices.com/api/v1/auth/twofactor' \
+curl --user-agent "ExampleApp/1.0" --location --request POST 'https://tsx.yqx.auto.k8s.your-eservices.com/api/v1/auth/twofactor' \
 --header 'Content-Type: application/json' \
 --data-raw '{
     "Username": "{{username}}",
@@ -28,54 +24,46 @@ curl --location --request POST 'https://tsx.yqx.auto.k8s.your-eservices.com/api/
 }'
 ```
 
+Refresh
 
-Refresh 
 ```bash
-curl --location --request GET 'https://tsx.yqx.auto.k8s.your-eservices.com/api/v1/auth/refresh' \
+curl --user-agent "ExampleApp/1.0" --location --request GET 'https://tsx.yqx.auto.k8s.your-eservices.com/api/v1/auth/refresh' \
 --header 'Authorization: Bearer YourRefreshTokenHere'
 ```
 
-
-
 # Property
-
 
 Assessments
 
 ```bash
-curl --location --request GET 'https://tsx.yqx.auto.k8s.your-eservices.com/api/v1/property/assessment/TheDataOnwerCodeHere' \
+curl --user-agent "ExampleApp/1.0" --location --request GET 'https://tsx.yqx.auto.k8s.your-eservices.com/api/v1/property/assessment/TheDataOnwerCodeHere' \
 --header 'Authorization: Bearer YourBearerTokenHere'
 ```
-
 
 Annual bill
 
 ```bash
-curl --location --request GET 'https://tsx.yqx.auto.k8s.your-eservices.com/api/v1/property/annualbill/TheDataOnwerCodeHere' \
+curl --user-agent "ExampleApp/1.0" --location --request GET 'https://tsx.yqx.auto.k8s.your-eservices.com/api/v1/property/annualbill/TheDataOnwerCodeHere' \
 --header 'Authorization: Bearer YourBearerTokenHere'
 ```
-
 
 Information
 
 ```bash
-curl --location --request GET 'https://tsx.yqx.auto.k8s.your-eservices.com/api/v1/property/information/TheDataOnwerCodeHere' \
+curl --user-agent "ExampleApp/1.0" --location --request GET 'https://tsx.yqx.auto.k8s.your-eservices.com/api/v1/property/information/TheDataOnwerCodeHere' \
 --header 'Authorization: Bearer YourBearerTokenHere'
 ```
-
 
 Local improvements
 
 ```bash
-curl --location --request GET 'https://tsx.yqx.auto.k8s.your-eservices.com/api/v1/property/localimprovement/TheDataOnwerCodeHere' \
+curl --user-agent "ExampleApp/1.0" --location --request GET 'https://tsx.yqx.auto.k8s.your-eservices.com/api/v1/property/localimprovement/TheDataOnwerCodeHere' \
 --header 'Authorization: Bearer YourBearerTokenHere'
 ```
-
 
 Other owner
 
 ```bash
-curl --location --request GET 'https://tsx.yqx.auto.k8s.your-eservices.com/api/v1/property/otherowner/TheDataOnwerCodeHere' \
+curl --user-agent "ExampleApp/1.0" --location --request GET 'https://tsx.yqx.auto.k8s.your-eservices.com/api/v1/property/otherowner/TheDataOnwerCodeHere' \
 --header 'Authorization: Bearer YourBearerTokenHere'
 ```
-
